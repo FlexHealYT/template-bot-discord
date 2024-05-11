@@ -89,7 +89,8 @@ class ClaimTicket(discord.ui.View):
         overwrite = {
             salon.guild.default_role: discord.PermissionOverwrite(read_messages=False, view_channel=False),
             discord.utils.get(salon.guild.roles, id=1198232712910221342): discord.PermissionOverwrite(read_messages=True, view_channel=True, send_messages=False)
-        }
+ # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       }
         await salon.edit(overwrites=overwrite)
 
         perms = salon.overwrites_for(user)
@@ -131,6 +132,7 @@ class ClaimTicket(discord.ui.View):
             return
         user = interaction.user
         log_channel_id = 1231927294264606741
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         await interaction.response.send_modal(CloseTicketModal(self.bot, self.salon, log_channel_id))  # Utiliser l'attribut salon
 
     async def on_error(self, interaction: discord.Interaction, error: Exception, item: discord.ui.Item) -> None:
