@@ -1,0 +1,5 @@
+discord
+aiosqlite
+aiohttp
+python-dotenv
+rich
