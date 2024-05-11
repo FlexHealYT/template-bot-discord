@@ -154,6 +154,7 @@ class JustClose(discord.ui.View):
             return
         user = interaction.user
         log_channel_id = 1231927294264606741
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         await interaction.response.send_modal(CloseTicketModal(self.bot, self.salon, log_channel_id))  # Utiliser l'attribut salon
 
     async def on_error(self, interaction: discord.Interaction, error: Exception, item: discord.ui.Item) -> None:
@@ -195,13 +196,19 @@ class Ticket(discord.ui.Select):
     async def callback(self, interaction: discord.Interaction):
         if self.values[0] == '0':
             category_id = 1230623083560435733
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             mention_id = 1232028126150922303
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         elif self.values[0] == '1':
             category_id = 1230623041629978665
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             mention_id = 1232680255970349087
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         elif self.values[0] == '2':
             category_id = 1230623133975974059
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             mention_id = 1198232712910221342
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
         category = self.bot.get_channel(category_id)
@@ -210,6 +217,7 @@ class Ticket(discord.ui.Select):
         overwrites = {
             category.guild.default_role: discord.PermissionOverwrite(read_messages=False, view_channel=False),
             discord.utils.get(category.guild.roles, id=1198232712910221342): discord.PermissionOverwrite(read_messages=True, view_channel=True),
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             category.guild.me: discord.PermissionOverwrite(read_messages=True, view_channel=True),
             interaction.user: discord.PermissionOverwrite(read_messages=True, view_channel=True)
         }
