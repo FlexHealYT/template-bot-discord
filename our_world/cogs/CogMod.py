@@ -138,6 +138,7 @@ class CogMod(commands.Cog, name="modération"):
                 print(f"Utilisateur banni - {user.id}  /  {user.name} à été banni de {context.guild.name} par {context.user} pour la raison suivante : {reason}")
                 await context.send(embed=embed, ephemeral=True)
                 await self.bot.get_channel(1232061261898846328).send(embed=embed)
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 try:
                     await membre.send(
                         f"Tu as été banni par **{context.author}** de **{context.guild.name}**!\nreason: {reason}"
@@ -205,6 +206,7 @@ class CogMod(commands.Cog, name="modération"):
         embed.add_field(name="reason:", value=reason)
         await context.send(embed=embed, ephemeral=True)
         await self.bot.get_channel(1232061261898846328).send(embed=embed)
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         try:
             await membre.send(
                 f"Vous avez été averti par **{context.author}** dans **{context.guild.name}**!\nreason: {reason}"
@@ -245,6 +247,7 @@ class CogMod(commands.Cog, name="modération"):
         )
         await context.send(embed=embed, ephemeral=True)
         await self.bot.get_channel(1232061261898846328).send(embed=embed)
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
     @avertissement.command(
@@ -332,6 +335,7 @@ class CogMod(commands.Cog, name="modération"):
             )
             await context.send(embed=embed, ephemeral=True)
             await self.bot.get_channel(1232061261898846328).send(embed=embed)
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     @commands.hybrid_command(
         name="archive",
